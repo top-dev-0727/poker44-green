@@ -11,6 +11,10 @@ PM2_NAME="${PM2_NAME:-poker44_miner}"  ##  name of Miner, as you wish
 AXON_PORT="${AXON_PORT:-8091}"
 ALLOWED_VALIDATOR_HOTKEYS="${ALLOWED_VALIDATOR_HOTKEYS:-}"
 
+# Optional: pin the manifest repo_commit to a specific release commit.
+# If unset, the miner auto-detects the current git HEAD at startup.
+POKER44_MODEL_REPO_COMMIT="${POKER44_MODEL_REPO_COMMIT:-}"
+
 if [ ! -f "$MINER_SCRIPT" ]; then
     echo "Error: Miner script not found at $MINER_SCRIPT"
     exit 1
@@ -24,6 +28,9 @@ fi
 pm2 delete $PM2_NAME 2>/dev/null || true
 
 export PYTHONPATH="$(pwd)"
+if [ -n "$POKER44_MODEL_REPO_COMMIT" ]; then
+  export POKER44_MODEL_REPO_COMMIT
+fi
 
 MINER_ARGS=(
   --netuid "$NETUID"
