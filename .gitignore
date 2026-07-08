@@ -23,7 +23,7 @@ output.png
 flightplans/*
 model/*
 
-models/*
+# models/*
 runs/*
 # C extensions
 *.so

@@ -1,0 +1,28 @@
+{
+    "schema_version": "1",
+    "open_source": true,
+    "repo_url": "https://github.com/top-dev-0727/poker44-green",
+    "repo_commit": "<commit-after-push>",
+    "model_name": "poker44-gbdt-bot-detector",
+    "model_version": "1.0.0",
+    "framework": "scikit-learn",
+    "license": "MIT",
+    "inference_mode": "local",
+    "training_data_statement": "Trained on public Poker44 benchmark releases served by https://api.poker44.net/api/v1/benchmark...",
+    "training_data_sources": [
+        "https://api.poker44.net/api/v1/benchmark"
+    ],
+    "private_data_attestation": "This miner does not train on validator-only evaluation data...",
+    "data_attestation": "Training performed exclusively on the public Poker44 benchmark API.",
+    "implementation_files": [
+        "neurons/miner.py",
+        "poker44/miner/__init__.py",
+        "poker44/miner/features.py",
+        "poker44/miner/model.py"
+    ],
+    "implementation_sha256": "33a4c94a8c08a304e051ee57cc3daa3e170de62a0cfd7f4003f6263f65706012",
+    "artifact_url": "models/bot_detector.pkl",
+    "artifact_sha256": "2a9b9ad4a68ea34dbf925d782b400eaac1921f715b889ce6ea98d721746dbe95",
+    "model_card_url": "",
+    "notes": "Production GBDT miner for Poker44."
+}
